@@ -3,6 +3,8 @@ require("dotenv").config();
 // require express to setup project
 const express = require("express");
 const app = express();
+const mongoose = require("./config/mongoose"); // Calling Mongoose Config File for Database
+
 
 
 
