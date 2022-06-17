@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 // calling cloud mongo url from env variable
-const nodeAuthCloudDB = process.env.MONGO_URL;
+const nodeAuthCloudDB = process.env.MONGO_DB;
 mongoose.connect(nodeAuthCloudDB);
 
 // establishing connection
