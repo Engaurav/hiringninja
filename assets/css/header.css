@@ -1,0 +1,7 @@
+header {
+  color: red; }
+  header nav {
+    background-color: aqua; }
+    header nav h1 {
+      margin: 0;
+      text-decoration: line-through; }
