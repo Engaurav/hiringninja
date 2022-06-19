@@ -6,7 +6,12 @@ const homeController = require('../controllers/homeController')
 
 // roter for home page
 router.get('/',homeController.students);
-router.get('/login',homeController.login);
+
+
+
+
+// routes for user login register and logut
+router.use("/user", require("./user"));
 
 
 

@@ -8,8 +8,3 @@ module.exports.students = (req,res) => {
 }
 
 
-module.exports.login = (req,res) => {
-    return res.render('login',{
-        title : 'Login'
-    });
-}
