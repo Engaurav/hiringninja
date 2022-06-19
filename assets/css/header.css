@@ -1,7 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300&display=swap");
 header {
-  color: red; }
+  margin: 0; }
   header nav {
-    background-color: aqua; }
-    header nav h1 {
-      margin: 0;
-      text-decoration: line-through; }
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    height: 84px;
+    background: #137dc5;
+    top: 0;
+    display: flex; }
+    header nav #brand-logo {
+      margin-left: 15px; }
+      header nav #brand-logo img {
+        width: 115px;
+        border-radius: 17px; }
+    header nav #navbar {
+      background-color: #fba034;
+      display: flex;
+      width: 100%;
+      height: 47px;
+      margin-top: 21px;
+      margin-left: 0px;
+      justify-content: space-between; }
+      header nav #navbar #nav-links {
+        display: flex; }
+        header nav #navbar #nav-links ul {
+          align-self: center;
+          list-style-type: none;
+          display: flex; }
+          header nav #navbar #nav-links ul li {
+            margin: 0 10px; }
+            header nav #navbar #nav-links ul li a {
+              text-decoration: none;
+              color: white;
+              font-size: x-large;
+              font-family: 'Anek Latin', sans-serif;
+              transition: ease-in-out 0.2s; }
+            header nav #navbar #nav-links ul li a:hover {
+              color: #137dc5;
+              font-weight: 800; }
+      header nav #navbar #nav-profile {
+        margin: -7px 12px;
+        cursor: pointer; }
