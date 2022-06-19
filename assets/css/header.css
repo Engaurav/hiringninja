@@ -42,3 +42,23 @@ header {
       header nav #navbar #nav-profile {
         margin: -7px 12px;
         cursor: pointer; }
+        header nav #navbar #nav-profile #nav-profile-dropdown {
+          background: white;
+          position: fixed;
+          right: 15px;
+          width: 115px;
+          color: #137dc5;
+          text-align: center;
+          transition: ease-in-out 0.3s;
+          top: 84px;
+          overflow: hidden;
+          height: 0; }
+          header nav #navbar #nav-profile #nav-profile-dropdown h5 {
+            margin: 6px; }
+          header nav #navbar #nav-profile #nav-profile-dropdown div {
+            padding: 4px; }
+            header nav #navbar #nav-profile #nav-profile-dropdown div a {
+              text-decoration: none;
+              color: #137dc5; }
+          header nav #navbar #nav-profile #nav-profile-dropdown div:hover {
+            background: #fba034; }

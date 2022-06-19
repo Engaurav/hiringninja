@@ -51,6 +51,31 @@ header{
             #nav-profile{
                 margin: -7px 12px;
                 cursor: pointer;
+                #nav-profile-dropdown{
+                    background: white;
+                    position: fixed;
+                    right: 15px;
+                    width: 115px;
+                    color: #137dc5;
+                    text-align: center;
+                    transition: ease-in-out 0.3s;
+                    top: 84px;
+                    overflow: hidden;
+                    height: 0;
+                    h5{
+                        margin: 6px;
+                    }
+                    div{
+                        padding: 4px;
+                        a{
+                            text-decoration: none;
+                            color: #137dc5;
+                        }
+                    }
+                    div:hover{
+                        background: #fba034;
+                    }
+                }
             }
         }
     }

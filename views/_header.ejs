@@ -9,16 +9,25 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="#">Interviews</a></li>
+                    <% if ( !locals.user ) {%>
                     <li><a href="/user/register">Register</a></li>
                     <li><a href="/user/login">Login</a></li>
+                    <% } %>
                 </ul>
 
            </div>
+           <% if( locals.user ) {%>
            <div id="nav-profile">
-                <div id="nav-profile-image"><img src="/images/profile.png" alt="profile-pic" width="60px"/></div>
-                <div id="nav-profile-dropdown"></div>
+                <div id="nav-profile-image"><img src="/images/profile.png" alt="profile-pic" width="60px" onclick="showProfileDropdown()"></div>
+                <div id="nav-profile-dropdown">
+                    <h5> <%= locals.user.name %></h5>
+                    <div><a href="/user/account">Account</a></div>
+                    <div><a href="/user/logout">Logout</a></div>
+                </div>
            </div>
+           <% } %>
             
         </div>
     </nav>
 </header>
+<script src="/javascripts/header.js"></script>
