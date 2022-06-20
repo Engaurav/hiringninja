@@ -9,13 +9,17 @@ const studentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    email : {
+        type: String,
+        required: true
+    },
     college : {
         type : String,
         required: true
     },
     status : {
         type: Boolean,
-        required: true
+        default: false
     },
     batch : {
         type: mongoose.Schema.Types.ObjectId,

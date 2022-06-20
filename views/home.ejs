@@ -1,3 +1,185 @@
+
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  
 <body>
   <%- include('_headerImage')%>
+  
+
+  <!--start: main container -->
+  <div id="main-container">
+
+        <!-- buttons for showing form to add student and batch -->
+        <div id="buttons">
+          <button class="btn btn-outline-warning float-end" onclick="openAddStudentForm()">Add Student <b>+</b></button>
+          <button class="btn btn-outline-dark" onclick="openAddBatchForm()" >Add Batch <b>+</b></button>
+        </div>
+        <!-- for adding new batch form -->
+        <div id="batch-container">
+          <div id="batch-form-container">
+            <div id="batch-detail">
+              <button class="btn btn-outline-danger float-end" onclick="closeAddBatchForm()">X</button>
+              <h4>Add Batch</h4><hr>
+            </div>
+            <div id="batch-form">
+              <form>
+                 <!-- Batch input -->
+                 <div class="form-outline p-4 d-flex justify-content-between">
+                  <label class="form-label">Batch</label>
+                  <input type="name" name="name" class="form-control form-control-sm w-75" placeholder="Enter Batch Name" required/> 
+                </div>
+                 <!-- Submit button -->
+                 <button type="submit" class="btn btn-primary float-end">
+                  Add Batch
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- for adding new student form -->
+        <div id="add-student-container">
+      
+          <div id="add-student-detail">
+              <button class="btn btn-outline-danger float-end" onclick="closeAddStudentForm()">X</button>
+              <h4>Add Student</h4><hr>
+              <div id="add-student-form">
+                  <form action="" method="POST">
+
+                    <!-- Name input -->
+                    <div class="form-outline mb-4 d-flex justify-content-between">
+                      <label class="form-label">Name</label>
+                      <input type="name" name="name" class="form-control form-control-sm w-75" placeholder="Enter Full Name of Student" required/> 
+                    </div>
+
+                    <!-- Gender Input -->
+                    <div class="form-outline mb-4 d-flex justify-content-between">
+                      <label class="form-label">Gender</label>
+                      <select class="form-select form-select-sm w-75" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                    </div>
+
+
+
+                    <!-- Email input -->
+                    <div class="form-outline mb-4 d-flex justify-content-between">
+                      <label class="form-label">Email</label>
+                      <input type="email" name="email" class="form-control form-control-sm w-75" placeholder="Enter Email of Student" required/> 
+                    </div>
+                  
+
+                    <!-- College input -->
+                    <div class="form-outline mb-4 d-flex justify-content-between">
+                      <label class="form-label">College</label>
+                      <input type="name" name="college" class="form-control form-control-sm w-75" placeholder="College Name of Student" required/> 
+                    </div>
+    
+                    <!-- Batch Input -->
+                    <div class="form-outline mb-4 d-flex justify-content-between">
+                      <label class="form-label">Batch</label>
+                      <select class="form-select form-select-sm w-75" name="batch">
+                        <option value="June 2022">June 2022</option>
+                        <option value="July 2022">July 2022</option>
+                        <option value="July 2022">July 2022</option>
+                      </select>
+                    </div>
+    
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary float-end my-3">
+                      Add Student
+                    </button>
+                  </form>
+              </div>
+          </div>
+        </div>
+        <!-- end of adding student form container -->
+
+        <!-- Student List Container -->
+        <div id="student-list-container">
+
+          <table id="table_id" class="display">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Batch</th>
+                    <th>Status</th>
+                    <th>Interview</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Gaurav Singh</td>
+                    <td>Male </td>
+                    <td>gaurav.singh323@gmail.com</td>
+                    <td>July 2022</td>
+                    <td>Not Placed</td>
+                    <td><button>+</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Saurav Singh</td>
+                    <td>Male </td>
+                    <td>saurav.singh323@gmail.com</td>
+                    <td>July 2022</td>
+                    <td>Not Placed</td>
+                    <td><button>+</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Aman Singh</td>
+                    <td>Male </td>
+                    <td>aman.singh323@gmail.com</td>
+                    <td>July 2022</td>
+                    <td>Not Placed</td>
+                    <td><button>+</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Annu Singh</td>
+                    <td>Male </td>
+                    <td>annu.singh323@gmail.com</td>
+                    <td>August 2022</td>
+                    <td>Not Placed</td>
+                    <td><button>+</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Ankit Singh</td>
+                    <td>Male </td>
+                    <td>aman.singh323@gmail.com</td>
+                    <td>August 2022</td>
+                    <td>Placed</td>
+                    <td><button>+</button></td>
+                </tr>
+               
+            </tbody>
+        </table>
+          
+
+
+
+
+        </div>
+  </div>
+
+
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" ></script>
+    <script>$(document).ready( function () {
+        $('#table_id').DataTable();
+    } );</script>
+    <script src="/javascripts/home.js"></script>
+  
 </body>

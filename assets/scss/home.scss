@@ -1,0 +1,65 @@
+
+
+#main-container{
+    #buttons{
+        margin: 20px 10px;
+    }
+
+    //css for batch container 
+    #batch-container{
+        margin: 10px;
+        display: none;
+        text-align: -webkit-center;
+        margin-bottom: 35px;
+        #batch-form-container{
+            border: solid 7px #137dc5;
+            padding: 15px;
+            max-width: 700px;
+            #batch-form{
+                background-color: #fba034;
+                color: white;
+                border-radius: 10px;
+                font-family: 'Anek Latin', sans-serif;
+                font-size: x-large;
+            }
+        }
+    }
+
+
+    // css for add student container
+    #add-student-container{
+        text-align: -webkit-center;
+        display: none;
+        margin-bottom: 30px;
+        #add-student-detail{
+            background-color: white;
+            border: solid 7px #137dc5;
+            padding: 15px;
+            max-width: 1100px;
+            #add-student-form{
+                background: #fba034;
+                font-family: 'Anek Latin', sans-serif;
+                padding: 20px;
+                color: white;
+                border-radius: 11px;
+                font-size: x-large;
+                max-width: 1000px;
+                font-weight: 300;
+            }
+        }
+    }
+
+
+
+    #student-list-container{
+        overflow: auto;
+        width: 100%;
+        padding: 5px;
+    }
+
+}
+
+
+
+
+
