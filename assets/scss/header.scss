@@ -3,6 +3,7 @@
 header{
     margin: 0;
     nav{
+        display: flex;
         margin: 0;
         position: fixed;
         width: 100%;
@@ -10,7 +11,7 @@ header{
         z-index: 999;
         background: #137dc5;
         top: 0;
-        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
         #brand-logo{
             margin-left: 15px;
             img{
@@ -54,16 +55,16 @@ header{
                 margin: -7px 12px;
                 cursor: pointer;
                 #nav-profile-dropdown{
+                    display: none;
                     background: white;
                     position: fixed;
-                    right: 15px;
-                    width: 115px;
+                    right: 0;
+                    padding: 7px;
                     color: #137dc5;
                     text-align: center;
                     transition: ease-in-out 0.3s;
                     top: 84px;
                     overflow: hidden;
-                    height: 0;
                     h5{
                         margin: 6px;
                     }
@@ -79,7 +80,82 @@ header{
                     }
                 }
             }
+            #sidebar-button{
+                margin: 0;
+                position: fixed;
+                cursor: pointer;
+                right: 8px;
+                top: 17px;
+                display: none;
+                
+                button{
+                    background: none;
+                    border: none;
+                    font-size: xx-large;
+                    color: #137dc5;
+                }
+            }
+            
         }
+        #sidebar{
+            display: none;
+        }
+        @media only screen and (max-width: 600px) {
+
+            #brand-logo{
+                img{
+                    width: 115px;
+                    border-radius: 17px;
+                    position: fixed;
+                    left: 13px;
+                    z-index: 99;
+                }
+            }
+            #nav-links{
+                /* display: none !important; */
+                position: fixed;
+                left: 0;
+                top: 187px;
+                z-index: 10;
+                overflow: hidden;
+                ul{
+                    flex-direction: column;
+                    li{
+                        margin: 0;
+                        a{
+                            margin: 0;
+                            font-size: xx-large !important;
+                            /* color: #222222 !important; */
+                        }
+                        a:hover{
+                            color: #fba034 !important;
+                        }
+                    }
+                }
+            }
+            #nav-profile{
+                display: none;
+                position: fixed;
+                left: 105px;
+                z-index: 999;
+                top: 120px;
+                #nav-profile-dropdown{
+                    margin: 0;
+                }
+            }
+            #sidebar-button{
+                display: block!important;
+            }
+            #sidebar{
+                display: none;
+                position: fixed;
+                height: 100%;
+                width: 300px;
+                background: linear-gradient(45deg, #fba034, #137dc5ed);
+                top: 83px;
+            }
+        }
+        
     }
    
 }

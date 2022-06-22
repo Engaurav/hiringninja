@@ -37,10 +37,11 @@
     text-align: -webkit-center; }
     #main-container #company-list-container #company-list .company-list-item {
       background: #fee6ca;
-      margin: 10px;
+      margin: 18px 10px;
       border-radius: 10px;
       overflow: hidden;
       display: flex;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       text-align: start;
       max-width: 1000px;
       justify-content: space-between; }

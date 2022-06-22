@@ -2,6 +2,7 @@
 header {
   margin: 0; }
   header nav {
+    display: flex;
     margin: 0;
     position: fixed;
     width: 100%;
@@ -9,7 +10,7 @@ header {
     z-index: 999;
     background: #137dc5;
     top: 0;
-    display: flex; }
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px; }
     header nav #brand-logo {
       margin-left: 15px; }
       header nav #brand-logo img {
@@ -45,16 +46,16 @@ header {
         margin: -7px 12px;
         cursor: pointer; }
         header nav #navbar #nav-profile #nav-profile-dropdown {
+          display: none;
           background: white;
           position: fixed;
-          right: 15px;
-          width: 115px;
+          right: 0;
+          padding: 7px;
           color: #137dc5;
           text-align: center;
           transition: ease-in-out 0.3s;
           top: 84px;
-          overflow: hidden;
-          height: 0; }
+          overflow: hidden; }
           header nav #navbar #nav-profile #nav-profile-dropdown h5 {
             margin: 6px; }
           header nav #navbar #nav-profile #nav-profile-dropdown div {
@@ -64,3 +65,58 @@ header {
               color: #137dc5; }
           header nav #navbar #nav-profile #nav-profile-dropdown div:hover {
             background: #fba034; }
+      header nav #navbar #sidebar-button {
+        margin: 0;
+        position: fixed;
+        cursor: pointer;
+        right: 8px;
+        top: 17px;
+        display: none; }
+        header nav #navbar #sidebar-button button {
+          background: none;
+          border: none;
+          font-size: xx-large;
+          color: #137dc5; }
+    header nav #sidebar {
+      display: none; }
+    @media only screen and (max-width: 600px) {
+      header nav #brand-logo img {
+        width: 115px;
+        border-radius: 17px;
+        position: fixed;
+        left: 13px;
+        z-index: 99; }
+      header nav #nav-links {
+        /* display: none !important; */
+        position: fixed;
+        left: 0;
+        top: 187px;
+        z-index: 10;
+        overflow: hidden; }
+        header nav #nav-links ul {
+          flex-direction: column; }
+          header nav #nav-links ul li {
+            margin: 0; }
+            header nav #nav-links ul li a {
+              margin: 0;
+              font-size: xx-large !important;
+              /* color: #222222 !important; */ }
+            header nav #nav-links ul li a:hover {
+              color: #fba034 !important; }
+      header nav #nav-profile {
+        display: none;
+        position: fixed;
+        left: 105px;
+        z-index: 999;
+        top: 120px; }
+        header nav #nav-profile #nav-profile-dropdown {
+          margin: 0; }
+      header nav #sidebar-button {
+        display: block !important; }
+      header nav #sidebar {
+        display: none;
+        position: fixed;
+        height: 100%;
+        width: 300px;
+        background: linear-gradient(45deg, #fba034, #137dc5ed);
+        top: 83px; } }
