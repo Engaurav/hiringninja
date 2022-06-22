@@ -14,6 +14,10 @@ router.get('/',homeController.students);
 router.use("/user", require("./user"));
 
 
+// rotes for company related links
+router.use("/jobs", require("./jobs"));
+
+
 
 
 

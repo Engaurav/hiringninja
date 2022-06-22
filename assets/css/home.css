@@ -36,6 +36,13 @@
       max-width: 1000px;
       font-weight: 300; }
 
+@media only screen and (max-width: 600px) {
+  #main-container .onwidth {
+    display: block !important;
+    width: 100% !important;
+    text-align: start;
+    margin: 0px; } }
+
 #main-container #student-list-container {
   overflow: auto;
   width: 100%;
