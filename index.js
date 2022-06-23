@@ -75,6 +75,8 @@ app.use(express.urlencoded());
 
 // connect static directory
 app.use(express.static('./assets'));
+// connecting upload path
+app.use('/uploads',express.static(__dirname + '/uploads'));
 
 
 

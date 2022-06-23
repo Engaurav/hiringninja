@@ -4,140 +4,96 @@
 <body>
     <%- include('_headerImage')%>
     <div id="main-container">
+
+        <% if(locals.user){ %>
          <!-- buttons for showing form to add student and batch -->
          <div id="buttons">
             <button class="btn btn-outline-dark float-end" onclick="openAddCompanyForm()">Add Company <b>+</b></button>
-        </div>
+          </div>
 
-              <!-- for adding new student form -->
-              <div id="add-company-container">
+          <!-- for adding new student form -->
+          <div id="add-company-container">
+
+            <div id="add-company-detail">
+                <button class="btn btn-outline-danger float-end" onclick="closeAddCompanyForm()">X</button>
+                <h4>Add Company</h4><hr>
+                <div id="add-company-form">
+                    <form action="/jobs/add/company" method="POST" enctype="multipart/form-data">
+
+                      <!--Company Name input -->
+                      <div class="onwidth form-outline mb-2 d-flex justify-content-between">
+                        <label class="onwidth">Name</label>
+                        <input type="text" name="name" class="onwidth form-control form-control-sm w-75" placeholder="Company Name" required/> 
+                      </div>
+
+
+
+                      <!--Company Technology Input -->
+                      <div class="onwidth form-outline mb-2 d-flex justify-content-between">
+                        <label class="onwidth">Technology</label>
+                        <input type="text" name="technology" class="onwidth form-control form-control-sm w-75" placeholder="Technology of Hiring" required/> 
+                      </div>
+
+                      <!--Company Brand Image Input -->
+                      <div class="onwidth form-outline mb-2 d-flex justify-content-between">
+                        <label class="onwidth">Logo</label>
+                        <input type="file" name="logo" class="onwidth form-control w-75" placeholder="Company Logo" required/> 
+                      </div>
+
+
+                      <!--Company Payment Range Input -->
+                      <div class="onwidth form-outline mb-2 d-flex justify-content-between">
+                        <label class="onwidth">Pay</label>
+                        <input type="text" name="pay" class="onwidth form-control form-control-sm w-75" placeholder="Enter Range of Payment of Job" required/> 
+                      </div>
+
+
+                      <!--Company Deadline  Input -->
+                      <div class="onwidth form-outline mb-2 d-flex justify-content-between">
+                        <label class="onwidth">Deadline</label>
+                        <input type="date" name="deadline" class="onwidth form-control form-control-sm w-75" placeholder="Deadline till Company is Hiring" required/> 
+                      </div>
+                      
+                      <!--Company Location  Input -->
+                      <div class="onwidth form-outline mb-2 d-flex justify-content-between">
+                        <label class="onwidth">Location</label>
+                        <input type="text" name="location" class="onwidth form-control form-control-sm w-75" placeholder="Enter the Location of Job" required/> 
+                      </div>
+
       
-                <div id="add-company-detail">
-                    <button class="btn btn-outline-danger float-end" onclick="closeAddCompanyForm()">X</button>
-                    <h4>Add Company</h4><hr>
-                    <div id="add-company-form">
-                        <form action="" method="POST">
-      
-                          <!--Company Name input -->
-                          <div class="onwidth form-outline mb-4 d-flex justify-content-between">
-                            <label class="onwidth form-label">Name</label>
-                            <input type="text" name="name" class="onwidth form-control form-control-sm w-75" placeholder="Company Name" required/> 
-                          </div>
+                      <!-- Submit button -->
+                      <button type="submit" class="btn btn-primary float-end my-3">
+                        Add Company
+                      </button>
+                    </form>
+                </div>
+            </div>
+          </div>
+          <!-- end of adding company form container -->
+          <% } %>
 
-
-
-                          <!--Company Technology Input -->
-                          <div class="onwidth form-outline mb-4 d-flex justify-content-between">
-                            <label class="onwidth form-label">Technology</label>
-                            <input type="text" name="technology" class="onwidth form-control form-control-sm w-75" placeholder="Technology of Hiring" required/> 
-                          </div>
-
-
-                          <!--Company Payment Range Input -->
-                          <div class="onwidth form-outline mb-4 d-flex justify-content-between">
-                            <label class="onwidth form-label">Pay</label>
-                            <input type="text" name="pay" class="onwidth form-control form-control-sm w-75" placeholder="Enter Range of Payment of Job" required/> 
-                          </div>
-
-
-                          <!--Company Deadline  Input -->
-                          <div class="onwidth form-outline mb-4 d-flex justify-content-between">
-                            <label class="onwidth form-label">Deadline</label>
-                            <input type="date" name="deadline" class="onwidth form-control form-control-sm w-75" placeholder="Deadline till Company is Hiring" required/> 
-                          </div>
-                          
-                          <!--Company Location  Input -->
-                          <div class="onwidth form-outline mb-4 d-flex justify-content-between">
-                            <label class="onwidth form-label">Location</label>
-                            <input type="text" name="deadline" class="onwidth form-control form-control-sm w-75" placeholder="Enter the Location of Job" required/> 
-                          </div>
-      
-          
-                          <!-- Submit button -->
-                          <button type="submit" class="btn btn-primary float-end my-3">
-                            Add Company
-                          </button>
-                        </form>
+          <!-- start : div container for companies Lists -->
+          <div id="company-list-container">
+            <div id="company-list">
+                <% for ( company of companies){%>
+                <!-- Copany List Item -->
+                <div class="company-list-item">
+                    <div class="company-image-container">
+                        <img src="<%= company.logo %>" alt="company-logo">
+                    </div>
+                    <div class="company-detail-container">
+                        <h3 class="company-technology"><%= company.technology %></h3>
+                        <h6 class="company-name"><%= company.name %></h6>
+                        <div class="company-detail">
+                            <div><span>Pay</span> <%= company.pay %></div>
+                            <div><span>Application Deadline</span> <%= company.deadline.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }) %></div>
+                            <div><span>Location</span> <%= company.location %></div>
+                        </div>
                     </div>
                 </div>
-              </div>
-              <!-- end of adding company form container -->
-
-
-              <!-- start : div container for companies Lists -->
-              <div id="company-list-container">
-                <div id="company-list">
-
-                    <!-- Copany List Item -->
-                    <div class="company-list-item">
-                        <div class="company-image-container">
-                            <img src="/images/cashify.jpg">
-                        </div>
-                        <div class="company-detail-container">
-                            <h3 class="company-technology">React.js Developer</h3>
-                            <h6 class="company-name">Cashify</h6>
-                            <div class="company-detail">
-                                <div><span>Pay</span> 6-7 LPA</div>
-                                <div><span>Application Deadline</span> Jun, 23 2022</div>
-                                <div><span>Location</span> Remote</div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Copany List Item -->
-                    <div class="company-list-item">
-                        <div class="company-image-container">
-                            <img src="/images/cashify.jpg">
-                        </div>
-                        <div class="company-detail-container">
-                            <h3 class="company-technology">React.js Developer</h3>
-                            <h6 class="company-name">Cashify</h6>
-                            <div class="company-detail">
-                                <div><span>Pay</span> 6-7 LPA</div>
-                                <div><span>Application Deadline</span> Jun, 23 2022</div>
-                                <div><span>Location</span> Remote</div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Copany List Item -->
-                    <div class="company-list-item">
-                        <div class="company-image-container">
-                            <img src="/images/cashify.jpg">
-                        </div>
-                        <div class="company-detail-container">
-                            <h3 class="company-technology">React.js Developer</h3>
-                            <h6 class="company-name">Cashify</h6>
-                            <div class="company-detail">
-                                <div><span>Pay</span> 6-7 LPA</div>
-                                <div><span>Application Deadline</span> Jun, 23 2022</div>
-                                <div><span>Location</span> Remote</div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Copany List Item -->
-                    <div class="company-list-item">
-                        <div class="company-image-container">
-                            <img src="/images/cashify.jpg">
-                        </div>
-                        <div class="company-detail-container">
-                            <h3 class="company-technology">React.js Developer</h3>
-                            <h6 class="company-name">Cashify</h6>
-                            <div class="company-detail">
-                                <div><span>Pay</span> 6-7 LPA</div>
-                                <div><span>Application Deadline</span> Jun, 23 2022</div>
-                                <div><span>Location</span> Remote</div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-              </div>
+                <% } %>
+            </div>
+          </div>
     </div>
     
     <script src="/javascripts/jobs.js"></script>
