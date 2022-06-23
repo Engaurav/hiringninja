@@ -1,7 +1,4 @@
 
-
-
-
 // function to handle profile pic button
 let showProfile = false;
 function showProfileDropdown(){
@@ -26,17 +23,21 @@ async function showSideBar(){
 
 
 
-    if(showProfile){
+    if(showSide){
         sidebar.style.display = "none";
-        navProfile.style.display = "none";
-        navLinks.style.display = "flex";
+        navLinks.style.left = "-100%";
+        if(navProfile){
+            navProfile.style.display = "none";
+        }
 
-        showProfile = false
+        showSide = false
     }else{
-        navProfile.style.display = "block";
+        if(navProfile){
+            navProfile.style.display = "block";
+        }
         sidebar.style.display = "block";
-        navLinks.style.display = "none !important";
-        showProfile = true;
+        navLinks.style.left = "0";
+        showSide = true;
     }
 
 }

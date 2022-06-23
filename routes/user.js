@@ -19,7 +19,7 @@ router.get("/logout", userController.signout);
 // use passport as a middleware to authenticate
 router.post(
   "/create-session",
-  passport.authenticate("local", { failureRedirect: "/user/signin" }),
+  passport.authenticate("local", { failureRedirect: "/user/login" }),
   userController.createSession
 );
 

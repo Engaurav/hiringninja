@@ -28,7 +28,7 @@ header{
             margin-left: 0px;
             justify-content: space-between;
             #nav-links{
-                display: flex;
+                display: flex ;
                 ul{
                     align-self: center;
                     list-style-type: none;
@@ -112,12 +112,10 @@ header{
                 }
             }
             #nav-links{
-                /* display: none !important; */
                 position: fixed;
-                left: 0;
+                left: -100%;
                 top: 187px;
                 z-index: 10;
-                overflow: hidden;
                 ul{
                     flex-direction: column;
                     li{

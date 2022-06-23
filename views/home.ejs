@@ -1,5 +1,7 @@
 
   <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
   
 <body>
@@ -23,11 +25,11 @@
               <h4>Add Batch</h4><hr>
             </div>
             <div id="batch-form">
-              <form>
+              <form action="/add/batch" method="post">
                  <!-- Batch input -->
                  <div class="onwidth form-outline p-4 d-flex justify-content-between">
                   <label class="onwidth form-label">Batch</label>
-                  <input type="name" name="name" class="onwidth form-control form-control-sm w-75" placeholder="Enter Batch Name" required/> 
+                  <input type="text" name="batch" class="onwidth form-control form-control-sm w-75" placeholder="Enter Batch Name" required/> 
                 </div>
                  <!-- Submit button -->
                  <button type="submit" class="btn btn-primary float-end">
@@ -45,7 +47,7 @@
               <button class="btn btn-outline-danger float-end" onclick="closeAddStudentForm()">X</button>
               <h4>Add Student</h4><hr>
               <div id="add-student-form">
-                  <form action="" method="POST">
+                  <form action="/student/addstudent" method="POST">
 
                     <!-- Name input -->
                     <div class="onwidth form-outline mb-4 d-flex justify-content-between">
@@ -57,8 +59,8 @@
                     <div class="onwidth form-outline mb-4 d-flex justify-content-between">
                       <label class="onwidth form-label">Gender</label>
                       <select class="onwidth form-select form-select-sm w-75" name="gender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                       </select>
                     </div>
 
@@ -81,9 +83,9 @@
                     <div class="onwidth form-outline mb-4 d-flex justify-content-between">
                       <label class="onwidth form-label">Batch</label>
                       <select class="onwidth form-select form-select-sm w-75" name="batch">
-                        <option value="June 2022">June 2022</option>
-                        <option value="July 2022">July 2022</option>
-                        <option value="July 2022">July 2022</option>
+                        <% for( batch of batches ) {%>
+                          <option value="<%= batch._id %>"><%= batch.batch %></option>
+                        <% } %>
                       </select>
                     </div>
     
@@ -100,6 +102,7 @@
         <!-- Student List Container -->
         <div id="student-list-container">
 
+          <!-- creating table using datatable.net library -->
           <table id="table_id" class="display">
             <thead>
                 <tr>
@@ -112,52 +115,34 @@
                     <th>Interview</th>
                 </tr>
             </thead>
+
+            <!-- table body -->
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Gaurav Singh</td>
-                    <td>Male </td>
-                    <td>gaurav.singh323@gmail.com</td>
-                    <td>July 2022</td>
-                    <td>Not Placed</td>
-                    <td><button>+</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Saurav Singh</td>
-                    <td>Male </td>
-                    <td>saurav.singh323@gmail.com</td>
-                    <td>July 2022</td>
-                    <td>Not Placed</td>
-                    <td><button>+</button></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Aman Singh</td>
-                    <td>Male </td>
-                    <td>aman.singh323@gmail.com</td>
-                    <td>July 2022</td>
-                    <td>Not Placed</td>
-                    <td><button>+</button></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Annu Singh</td>
-                    <td>Male </td>
-                    <td>annu.singh323@gmail.com</td>
-                    <td>August 2022</td>
-                    <td>Not Placed</td>
-                    <td><button>+</button></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Ankit Singh</td>
-                    <td>Male </td>
-                    <td>aman.singh323@gmail.com</td>
-                    <td>August 2022</td>
-                    <td>Placed</td>
-                    <td><button>+</button></td>
-                </tr>
+
+                <!-- looping over all students -->
+                <% for( student of students) {%>
+                  <tr>
+                    <td><%= student_index %></td>
+                    <td><%= student.name %></td>
+                    <td><%= student.gender %> </td>
+                    <td><%= student.email %></td>
+                    <td><%=student.batch.batch %></td> </td>
+                      <% if(student.status) {%>
+                        <td>Placed</td>
+                      <% }else{  %>
+                        <td>Not Placed</td>
+                      <% } %>
+                    <td style="display: flex;justify-content: space-between;">
+                      <button style="background:none;border: none;font-size: x-large;color: cornflowerblue;">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                      </button> 
+                      <button style="background: none;border:none;color:red;font-size: x-large;">
+                        <i class="fa-solid fa-delete-left"></i>
+                      </button>
+                    </td>
+                    <% student_index++ %>
+                  </tr>
+                <% } %>
                
             </tbody>
         </table>
