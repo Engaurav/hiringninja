@@ -9,7 +9,7 @@ const passport = require("passport");
 const studentController = require('../controllers/studentController');
 
 // route to add a student
-router.post('/addstudent',studentController.addStudent)
+router.post('/addstudent',passport.authenticate("local", { failureRedirect: "/user/login" }),studentController.addStudent)
 
 
 module.exports = router;

@@ -12,10 +12,12 @@
   <div id="main-container">
 
         <!-- buttons for showing form to add student and batch -->
+        <% if(locals.user){%>
         <div id="buttons">
           <button class="btn btn-outline-warning float-end" onclick="openAddStudentForm()">Add Student <b>+</b></button>
           <button class="btn btn-outline-dark" onclick="openAddBatchForm()" >Add Batch <b>+</b></button>
         </div>
+      
         
         <!-- for adding new batch form -->
         <div id="batch-container">
@@ -98,6 +100,7 @@
           </div>
         </div>
         <!-- end of adding student form container -->
+        <% } %>
 
         <!-- Student List Container -->
         <div id="student-list-container">

@@ -97,6 +97,7 @@ app.set("views", "./views");
 // calling all the routes using use middleware
 app.use("/", require("./routes/index"));
 
+
 // server is running using express
 app.listen(process.env.PORT, (err) => {
   if (err) {

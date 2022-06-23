@@ -1,5 +1,9 @@
 const router = require('express').Router();
 
+
+// fetching passport to authenticate
+const passport = require("passport");
+
 // requiring home controller for adding modules in diffrent routes
 const homeController = require('../controllers/homeController')
 
@@ -8,7 +12,7 @@ const homeController = require('../controllers/homeController')
 router.get('/',homeController.students);
 
 // router for adding new batch
-router.post('/add/batch',homeController.addBatch);
+router.post('/add/batch',passport.authenticate("local", { failureRedirect: "/user/login" }),homeController.addBatch);
 
 
 
@@ -30,7 +34,9 @@ router.use("/jobs", require("./jobs"));
 
 
 
-
+router.all("*",(req,res)=>{
+    return res.send(homeController.page404)
+})
 
 
 
