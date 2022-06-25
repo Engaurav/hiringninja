@@ -66,6 +66,26 @@
         margin-top: 30px;
     }
 
+    #interview-form-container{
+        display: none;
+        position: fixed;
+        top: 25%;
+        width: 100%;
+        text-align: -webkit-center;
+        #add-interview-form{    
+            max-width: 700px;
+            padding: 10px;
+            background: aliceblue;
+            border: solid steelblue;
+            form{
+                font-family: 'Anek Latin', sans-serif;
+                font-size: x-large;
+                text-align: end;
+                padding: 10px;
+            }
+        }
+    }
+
 }
 
 

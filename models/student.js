@@ -26,6 +26,14 @@ const studentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Batch'
     },
+    interview : [{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Interview'
+    }],
+    companies : [{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Company'
+    }]
 },{
     timestamps: true
 })

@@ -29,6 +29,13 @@ router.use("/student", require("./student"));
 router.use("/jobs", require("./jobs"));
 
 
+// rotes for company related links
+router.use("/interview", require("./interview"));
+
+// rotes for api related links
+router.use("/api", require("./api/index"));
+
+
 
 
 

@@ -6,13 +6,9 @@ const router = express.Router(); //fetching router
 const passport = require("passport");
 
 // fetching job contreoller
-const jobController = require('../controllers/jobsController')
+const interviewAPI = require('../../controllers/api/interviewApi');
 
-// roter for fetching all the companies
-router.get("/lists",jobController.companiesLists)
-
-// roter for adding new  company
-router.post("/add/company",jobController.addCompany)
+router.get('/interview/:id/companies',interviewAPI.CompanyListSendApi);
 
 
 module.exports = router;

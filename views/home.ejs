@@ -136,7 +136,7 @@
                         <td>Not Placed</td>
                       <% } %>
                     <td style="display: flex;justify-content: space-between;">
-                      <button style="background:none;border: none;font-size: x-large;color: cornflowerblue;">
+                      <button style="background:none;border: none;font-size: x-large;color: cornflowerblue;" onclick="openAddInterviewForm('<%= student._id %>','<%= student.name %>')">
                         <i class="fa-solid fa-calendar-plus"></i>
                       </button> 
                       <button style="background: none;border:none;color:red;font-size: x-large;">
@@ -148,13 +148,52 @@
                 <% } %>
                
             </tbody>
-        </table>
-          
-
-
-
-
+          </table>
         </div>
+        
+        <!--End: Student List Container -->
+        
+
+        <!-- interview form for adding student -->
+        <div id="interview-form-container">
+          <div id="add-interview-form">
+            <div style="text-align: left;color: #333333;">
+              <button class="btn btn-outline-danger float-end" onclick="closeAddInterviewForm()">X</button>
+              <h3>Interview Schedule</h3>
+            </div>
+            <form action="/interview/add" method="post">
+
+              <div id="interview-pass-data-from-js">
+                  <!-- Student input -->
+                <div class="onwidth form-outline p-2 d-flex justify-content-between">
+                  <label class="onwidth form-label">Student</label>
+                  <input type="text" name="batch" class="onwidth form-control form-control-sm w-75" value="Gaurav Singh" readonly required/> 
+                </div>
+  
+                <!-- Batch Input -->
+                <div class="onwidth form-outline p-2 d-flex justify-content-between">
+                  <label class="onwidth form-label">Company</label>
+                  <select class="onwidth form-select form-select-sm w-75" name="batch">
+                    
+                  </select>
+                </div>
+              
+
+              <!-- Schedule Date -->
+              <div class="onwidth form-outline p-2 d-flex justify-content-between">
+                <label class="onwidth form-label">Date</label>
+                <input type="date" name="date" class="onwidth form-control form-control-sm w-75" required/> 
+               </div>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary float-end">
+               Add Interview
+              </button>
+           </form>
+          </div>
+        </div>
+
   </div>
 
 

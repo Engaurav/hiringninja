@@ -5,14 +5,11 @@ const router = express.Router(); //fetching router
 // fetching passport to authenticate
 const passport = require("passport");
 
-// fetching job contreoller
-const jobController = require('../controllers/jobsController')
-
-// roter for fetching all the companies
-router.get("/lists",jobController.companiesLists)
+// calling controller
+const interviewController = require('../controllers/interviewController');
 
 // roter for adding new  company
-router.post("/add/company",jobController.addCompany)
+router.post("/add",interviewController.addInterview);
 
 
 module.exports = router;

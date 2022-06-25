@@ -9,7 +9,7 @@ module.exports.students =async (req,res) => {
 
         // fetching all batches
         const batch =await Batch.find({})
-        console.log(batch)
+        // console.log(batch)
 
         // fetching all students
         const student = await Student.find({}).populate('batch');
