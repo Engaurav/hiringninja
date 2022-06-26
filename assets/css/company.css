@@ -1,0 +1,42 @@
+#main-container {
+  margin: 10px; }
+  #main-container #company-detail-container {
+    display: flex;
+    background: white;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px; }
+    #main-container #company-detail-container #company-left-detail {
+      display: flex; }
+      #main-container #company-detail-container #company-left-detail #company-brand-image {
+        margin: 0; }
+      #main-container #company-detail-container #company-left-detail #company-brand-detail {
+        margin: 0; }
+    #main-container #company-detail-container #company-right-detail {
+      margin: 20px;
+      border-left: solid 2px gray;
+      padding: 10px; }
+  #main-container #students-lists-container {
+    display: flex;
+    flex-wrap: wrap; }
+    #main-container #students-lists-container .student-data-box {
+      background: white;
+      padding: 10px;
+      margin: 10px;
+      min-width: 380px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; }
+  @media only screen and (max-width: 600px) {
+    #main-container #company-detail-container {
+      display: block; }
+      #main-container #company-detail-container #company-left-detail {
+        display: block;
+        text-align: -webkit-center; }
+        #main-container #company-detail-container #company-left-detail #company-brand-image {
+          margin: 0; }
+        #main-container #company-detail-container #company-left-detail #company-brand-detail {
+          margin: 0px 20px;
+          border-bottom: 3px solid gray; }
+      #main-container #company-detail-container #company-right-detail {
+        margin: 10px 20px;
+        border: none;
+        padding: 0; } }

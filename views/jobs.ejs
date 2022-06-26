@@ -75,9 +75,11 @@
           <!-- start : div container for companies Lists -->
           <div id="company-list-container">
             <div id="company-list">
-                <% for ( company of companies){%>
+              <% for ( company of companies){%>
+              <!-- anchor tag for company -->
+              <a href="/jobs/view/company/<%= company._id %>">
                 <!-- Copany List Item -->
-                <div class="company-list-item">
+                 <div class="company-list-item">
                     <div class="company-image-container">
                         <img src="<%= company.logo %>" alt="company-logo">
                     </div>
@@ -91,6 +93,7 @@
                         </div>
                     </div>
                 </div>
+              </a>
                 <% } %>
             </div>
           </div>

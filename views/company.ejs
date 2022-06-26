@@ -1,0 +1,114 @@
+
+  <link rel="stylesheet" href="/css/company.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+<body>
+    <%- include('_headerImage')%>
+    <div id="main-container">
+
+      <!-- start: company detail container -->
+      <div id="company-detail-container">
+        <div id="company-left-detail">
+          <div id="company-brand-image">
+            <img src="<%= company.logo %>" width="165px">
+          </div>
+          <div id="company-brand-detail">
+            <h2><%= company.name %></h2>
+            <h5 style="color: coral;"><%= company.technology %></h5>
+          </div>
+        </div>
+        <div id="company-right-detail">
+          <div id="company-location"><b>Location</b>: <%= company.location %></div>
+          <div id="company-pay"><b>Pay</b>: <%= company.pay%></div>
+          <div id="company-deadline"><b>Last Date</b>: <%= company.deadline.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }) %></div>
+        </div>
+      </div>
+      <!-- end: company detail container -->
+      
+
+      <div style="margin:20px;">
+        <button class="btn btn-outline-danger float-end">CSV</button>
+        <h2>Students</h2>
+      </div>
+
+      <!-- Students Lists Container --> 
+      <div id="students-lists-container">
+
+        <!-- student detail box -->
+        <div class="student-data-box">
+          <h3>
+            Gaurav Singh
+          </h3>
+          <div id="student-personal-detail">
+            <b>Gender:</b> Male
+            <b>Email :</b> gaurav.singh323@gmail.com
+          </div>
+          <div class="student-scores-container">
+            <b>WebD : </b>50% 
+            <b>DSA : </b>70% 
+            <b>React : </b>80% 
+          </div>
+        </div>
+        <div class="student-data-box">
+          <h3>
+            Gaurav Singh
+          </h3>
+          <div id="student-personal-detail">
+            <b>Gender:</b> Male
+            <b>Email :</b> gaurav.singh323@gmail.com
+          </div>
+          <div class="student-scores-container">
+            <b>WebD : </b>50% 
+            <b>DSA : </b>70% 
+            <b>React : </b>80% 
+          </div>
+        </div>
+        <div class="student-data-box">
+          <h3>
+            Gaurav Singh
+          </h3>
+          <div id="student-personal-detail">
+            <b>Gender:</b> Male
+            <b>Email :</b> gaurav.singh323@gmail.com
+          </div>
+          <div class="student-scores-container">
+            <b>WebD : </b>50% 
+            <b>DSA : </b>70% 
+            <b>React : </b>80% 
+          </div>
+        </div>
+        <div class="student-data-box">
+          <h3>
+            Gaurav Singh
+          </h3>
+          <div id="student-personal-detail">
+            <b>Gender:</b> Male
+            <b>Email :</b> gaurav.singh323@gmail.com
+          </div>
+          <div class="student-scores-container">
+            <b>WebD : </b>50% 
+            <b>DSA : </b>70% 
+            <b>React : </b>80% 
+          </div>
+        </div>
+        <div class="student-data-box">
+          <h3>
+            Gaurav Singh
+          </h3>
+          <div id="student-personal-detail">
+            <b>Gender:</b> Male
+            <b>Email :</b> gaurav.singh323@gmail.com
+          </div>
+          <div class="student-scores-container">
+            <b>WebD : </b>50% 
+            <b>DSA : </b>70% 
+            <b>React : </b>80% 
+          </div>
+        </div>
+      </div>
+      <!--End: Students Lists Container --> 
+
+    </div>
+    <!-- end main container -->
+    
+    <!-- <script src="/javascripts/company.js"></script> -->
+</body>

@@ -1,0 +1,59 @@
+
+
+#main-container{
+    margin:10px;
+    #company-detail-container{
+        display: flex;
+        background: white;
+        justify-content: space-between;
+        padding: 5px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        #company-left-detail{
+            display: flex;
+            #company-brand-image{
+                margin: 0;
+            }
+            #company-brand-detail{
+               margin: 0;
+            }
+        }
+        #company-right-detail{
+            margin: 20px;
+            border-left: solid 2px gray;
+            padding: 10px;
+        }
+    }
+    #students-lists-container{
+        display: flex;
+        flex-wrap: wrap;
+        .student-data-box{
+            background: white;
+            padding: 10px;
+            margin: 10px;
+            min-width: 380px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        #company-detail-container{
+            display: block;
+            #company-left-detail{
+                display: block;
+                text-align: -webkit-center;
+                #company-brand-image{
+                    margin: 0;
+                }
+                #company-brand-detail{
+                    margin: 0px 20px;
+                    border-bottom: 3px solid gray;
+                }
+            }
+            #company-right-detail{
+                margin: 10px 20px;
+                border: none;
+                padding: 0;
+            }
+        }
+    }
+}

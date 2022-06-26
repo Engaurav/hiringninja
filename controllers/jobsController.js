@@ -49,3 +49,23 @@ module.exports.addCompany = async (req,res) => {
         console.log(`Error in addCompany  Controller ${error}`); 
     }
 }
+
+
+
+
+//controller for viewing single company detail
+module.exports.companiesDataView= async (req,res) => {
+    try {
+        const id = req.params.id;
+        const company = await Company.findById(id);
+        return res.render("company", {
+            title : 'Company',
+            company
+        });
+        
+    } catch (error) {
+        console.log(`Error in Companies View Controller ${error}`);  
+        req.flash("error","Company is not Added") 
+        return res.redirect('/jobs/lists'); 
+    }
+}

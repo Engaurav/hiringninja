@@ -6,13 +6,16 @@ const router = express.Router(); //fetching router
 const passport = require("passport");
 
 // fetching job contreoller
-const jobController = require('../controllers/jobsController')
+const jobController = require('../controllers/jobsController');
 
 // roter for fetching all the companies
-router.get("/lists",jobController.companiesLists)
+router.get("/lists",jobController.companiesLists);
 
 // roter for adding new  company
-router.post("/add/company",jobController.addCompany)
+router.post("/add/company",jobController.addCompany);
+
+// router for viewing the company
+router.get("/view/company/:id",jobController.companiesDataView);
 
 
 module.exports = router;

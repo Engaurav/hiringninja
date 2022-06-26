@@ -35,44 +35,47 @@
   #main-container #company-list-container #company-list {
     margin: auto;
     text-align: -webkit-center; }
-    #main-container #company-list-container #company-list .company-list-item {
-      background: #fee6ca;
-      margin: 18px 10px;
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      text-align: start;
-      max-width: 1000px;
-      justify-content: space-between; }
-      #main-container #company-list-container #company-list .company-list-item .company-image-container {
-        text-align: center;
-        width: 115px;
-        background: #0000001a; }
-        #main-container #company-list-container #company-list .company-list-item .company-image-container img {
-          width: 115px; }
-      #main-container #company-list-container #company-list .company-list-item .company-detail-container {
-        padding: 10px;
-        width: 100%; }
-        #main-container #company-list-container #company-list .company-list-item .company-detail-container .company-technology {
-          margin: auto; }
-        #main-container #company-list-container #company-list .company-list-item .company-detail-container .company-name {
-          margin: auto;
-          color: #fba034; }
-        #main-container #company-list-container #company-list .company-list-item .company-detail-container .company-detail {
-          margin: auto;
-          display: flex;
-          font-size: smaller;
-          flex-wrap: wrap;
-          margin-top: 15px;
-          justify-content: space-between; }
-          #main-container #company-list-container #company-list .company-list-item .company-detail-container .company-detail div span {
-            color: gray; }
-    #main-container #company-list-container #company-list .company-list-item :hover {
-      background: #eaeaea; }
-    @media only screen and (max-width: 540px) {
-      #main-container #company-list-container #company-list .company-list-item {
-        display: block; }
-        #main-container #company-list-container #company-list .company-list-item .company-image-container {
-          margin: auto;
-          width: auto; } }
+    #main-container #company-list-container #company-list a {
+      text-decoration: none;
+      color: black; }
+      #main-container #company-list-container #company-list a .company-list-item {
+        background: #fee6ca;
+        margin: 18px 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        text-align: start;
+        max-width: 1000px;
+        justify-content: space-between; }
+        #main-container #company-list-container #company-list a .company-list-item .company-image-container {
+          text-align: center;
+          width: 115px;
+          background: #0000001a; }
+          #main-container #company-list-container #company-list a .company-list-item .company-image-container img {
+            width: 115px; }
+        #main-container #company-list-container #company-list a .company-list-item .company-detail-container {
+          padding: 10px;
+          width: 100%; }
+          #main-container #company-list-container #company-list a .company-list-item .company-detail-container .company-technology {
+            margin: auto; }
+          #main-container #company-list-container #company-list a .company-list-item .company-detail-container .company-name {
+            margin: auto;
+            color: #fba034; }
+          #main-container #company-list-container #company-list a .company-list-item .company-detail-container .company-detail {
+            margin: auto;
+            display: flex;
+            font-size: smaller;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            justify-content: space-between; }
+            #main-container #company-list-container #company-list a .company-list-item .company-detail-container .company-detail div span {
+              color: gray; }
+      #main-container #company-list-container #company-list a .company-list-item :hover {
+        background: #eaeaea; }
+      @media only screen and (max-width: 540px) {
+        #main-container #company-list-container #company-list a .company-list-item {
+          display: block; }
+          #main-container #company-list-container #company-list a .company-list-item .company-image-container {
+            margin: auto;
+            width: auto; } }
