@@ -34,76 +34,30 @@
       <div id="students-lists-container">
 
         <!-- student detail box -->
+
+        <% for (student of company.students){%>
+       
         <div class="student-data-box">
-          <h3>
-            Gaurav Singh
+          <div class="form-check form-switch" style="right: 10px;position: absolute;top: 13px;width: 130px;">
+            <b style="position: absolute;top: -1px;color: coral;">Status</b>
+            <input class="form-check-input float-end" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          </div>
+          <h3 style="color: #137dc5;">
+            <%= student.name %>
           </h3>
           <div id="student-personal-detail">
-            <b>Gender:</b> Male
-            <b>Email :</b> gaurav.singh323@gmail.com
+            <b>Gender:</b> <%= student.gender %>
+            <b>Email :</b> <%= student.email %>
           </div>
           <div class="student-scores-container">
-            <b>WebD : </b>50% 
-            <b>DSA : </b>70% 
-            <b>React : </b>80% 
+           <span> <b>WebD:</b> 50% </span>
+           <span> <b>DSA:</b> 70% </span>
+           <span> <b>React:</b> 80%</span>
           </div>
+     
         </div>
-        <div class="student-data-box">
-          <h3>
-            Gaurav Singh
-          </h3>
-          <div id="student-personal-detail">
-            <b>Gender:</b> Male
-            <b>Email :</b> gaurav.singh323@gmail.com
-          </div>
-          <div class="student-scores-container">
-            <b>WebD : </b>50% 
-            <b>DSA : </b>70% 
-            <b>React : </b>80% 
-          </div>
-        </div>
-        <div class="student-data-box">
-          <h3>
-            Gaurav Singh
-          </h3>
-          <div id="student-personal-detail">
-            <b>Gender:</b> Male
-            <b>Email :</b> gaurav.singh323@gmail.com
-          </div>
-          <div class="student-scores-container">
-            <b>WebD : </b>50% 
-            <b>DSA : </b>70% 
-            <b>React : </b>80% 
-          </div>
-        </div>
-        <div class="student-data-box">
-          <h3>
-            Gaurav Singh
-          </h3>
-          <div id="student-personal-detail">
-            <b>Gender:</b> Male
-            <b>Email :</b> gaurav.singh323@gmail.com
-          </div>
-          <div class="student-scores-container">
-            <b>WebD : </b>50% 
-            <b>DSA : </b>70% 
-            <b>React : </b>80% 
-          </div>
-        </div>
-        <div class="student-data-box">
-          <h3>
-            Gaurav Singh
-          </h3>
-          <div id="student-personal-detail">
-            <b>Gender:</b> Male
-            <b>Email :</b> gaurav.singh323@gmail.com
-          </div>
-          <div class="student-scores-container">
-            <b>WebD : </b>50% 
-            <b>DSA : </b>70% 
-            <b>React : </b>80% 
-          </div>
-        </div>
+        <% } %>
+       
       </div>
       <!--End: Students Lists Container --> 
 
