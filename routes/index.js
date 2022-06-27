@@ -12,7 +12,7 @@ const homeController = require('../controllers/homeController')
 router.get('/',homeController.students);
 
 // router for adding new batch
-router.post('/add/batch',passport.authenticate("local", { failureRedirect: "/user/login" }),homeController.addBatch);
+router.post('/add/batch',homeController.addBatch);
 
 
 

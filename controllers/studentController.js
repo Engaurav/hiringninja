@@ -1,6 +1,7 @@
 // fetching models
 const Batch = require('../models/batch');
 const Student = require('../models/student');
+const Scores = require('../models/scores');
 
 // controller for adding new student
 module.exports.addStudent = async (req,res) => {
@@ -28,13 +29,22 @@ module.exports.addStudent = async (req,res) => {
                 Student.create(req.body,(err,student)=>{
                     if(err){
                         console.log(`Error in creating Student ${err}`);
-                        return;
                     }
 
                     // storing new user in batch
                     batch.students.push(student);
                     batch.save();
 
+                    Scores.create(req.body,(err,score)=>{
+                        if(err){
+                            console.log(`Error in creating score of Student ${err}`);
+                        }
+    
+                        score.student = student;
+                        score.save();
+                        student.scores = score;
+                        student.save();
+                    })
                     req.flash("success","Student is Added");
                     return res.redirect('back');
                 })

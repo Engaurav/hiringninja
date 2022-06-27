@@ -33,7 +33,11 @@ const studentSchema = new mongoose.Schema({
     companies : [{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Company'
-    }]
+    }],
+    scores : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Scores'
+    },
 },{
     timestamps: true
 })

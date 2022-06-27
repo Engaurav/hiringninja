@@ -31,6 +31,7 @@ module.exports.students =async (req,res) => {
 // controller for adding new batch
 module.exports.addBatch = async (req,res) => {
     try {
+        console.log("Batch");
         Batch.create(req.body,(err,batch)=>{
             if(err){
                 console.log(`Error in creating Batch ${err}`);

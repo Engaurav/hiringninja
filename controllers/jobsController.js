@@ -57,7 +57,12 @@ module.exports.addCompany = async (req,res) => {
 module.exports.companiesDataView= async (req,res) => {
     try {
         const id = req.params.id;
-        const company = await Company.findById(id).populate('students');
+        const company = await Company.findById(id).populate({
+            path : 'students',
+            populate:{
+                path : 'scores'
+            }
+        });
         return res.render("company", {
             title : 'Company',
             company
