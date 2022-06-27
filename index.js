@@ -16,6 +16,7 @@ const MongoStore = require("connect-mongo");
 // using flash for notifation
 const flash = require("connect-flash");
 const customMWare = require("./config/middleware");
+const path = require('path')
 
 
 
@@ -77,6 +78,9 @@ app.use(express.urlencoded());
 app.use(express.static('./assets'));
 // connecting upload path
 app.use('/uploads',express.static(__dirname + '/uploads'));
+
+
+app.use("/files", express.static(path.join(__dirname, "public/files")));
 
 
 

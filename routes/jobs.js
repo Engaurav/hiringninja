@@ -17,5 +17,8 @@ router.post("/add/company",jobController.addCompany);
 // router for viewing the company
 router.get("/view/company/:id",jobController.companiesDataView);
 
+// router for downloading csv of the company
+router.get("/view/company/:id/csv",jobController.exportsComapnyCSV);
+
 
 module.exports = router;
