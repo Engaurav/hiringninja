@@ -16,6 +16,38 @@
       margin: 20px;
       border-left: solid 2px gray;
       padding: 10px; }
+      #main-container #company-detail-container #company-right-detail #status-info {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; }
+  #main-container #information {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+    margin-top: 20px;
+    justify-content: space-between; }
+    #main-container #information #status-info {
+      display: flex;
+      width: 384px;
+      justify-content: space-between; }
+      #main-container #information #status-info .status-not-attempt-info {
+        background: none;
+        border: none;
+        float: right;
+        font-size: small;
+        color: #cec158; }
+      #main-container #information #status-info .status-cleared-info {
+        background: none;
+        border: none;
+        float: right;
+        font-size: small;
+        color: green; }
+      #main-container #information #status-info .status-not-cleared-info {
+        background: none;
+        border: none;
+        float: right;
+        font-size: small;
+        color: red; }
   #main-container #students-lists-container {
     display: flex;
     flex-wrap: wrap; }
@@ -26,6 +58,24 @@
       min-width: 380px;
       position: relative;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; }
+      #main-container #students-lists-container .student-data-box h3 .status-not-attempt {
+        background: none;
+        border: none;
+        float: right;
+        font-size: small;
+        color: #cec158; }
+      #main-container #students-lists-container .student-data-box h3 .status-cleared {
+        background: none;
+        border: none;
+        float: right;
+        font-size: small;
+        color: green; }
+      #main-container #students-lists-container .student-data-box h3 .status-not-cleared {
+        background: none;
+        border: none;
+        float: right;
+        font-size: small;
+        color: red; }
       #main-container #students-lists-container .student-data-box .student-scores-container {
         display: flex;
         justify-content: space-between; }

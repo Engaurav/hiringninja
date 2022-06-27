@@ -1,4 +1,6 @@
 const Company = require('../models/company');
+const Interview = require('../models/interview');
+
 var fs = require("fs");
 var csv = require("fast-csv");
 
@@ -66,6 +68,16 @@ module.exports.companiesDataView= async (req,res) => {
             }
         });
 
+        const interview = await Interview.find({company:id}).populate({
+            path : 'student',
+            populate:{
+                path : 'scores'
+            }
+        });
+
+        // console.log(interview)
+        
+
         // Start : Creating CSV for a company
         const csvStream = csv.format({ headers: true });
     
@@ -85,16 +97,16 @@ module.exports.companiesDataView= async (req,res) => {
         csvStream.pipe(writableStream);
     
         // Writing our csv data
-        for(student of company.students){
+        for(i of interview){
             csvStream.write({
-                Student_Name: student.name ? student.name : "-",
-                Gender : student.gender ? student.gender : "-",
-                Email: student.email ? student.email : "-",
-                College: student.college ? student.college : "-",
-                DSA_Marks : student.scores.dsa ? student.scores.dsa : "-",
-                WebD_Marks : student.scores.webd ? student.scores.webd : "-",
-                React_Marks : student.scores.react ? student.scores.react : "-",
-                Results : student.status ? 'Cleared' : "Not Cleared"
+                Student_Name: i.student.name ? i.student.name : "-",
+                Gender : i.student.gender ? i.student.gender : "-",
+                Email: i.student.email ? i.student.email : "-",
+                College: i.student.college ? i.student.college : "-",
+                DSA_Marks : i.student.scores.dsa ? i.student.scores.dsa : "-",
+                WebD_Marks : i.student.scores.webd ? i.student.scores.webd : "-",
+                React_Marks : i.student.scores.react ? i.student.scores.react : "-",
+                Results : i.result ? i.result : "-"
             });
         }
         
@@ -107,7 +119,8 @@ module.exports.companiesDataView= async (req,res) => {
 
         return res.render("company", {
             title : 'Company',
-            company
+            company,
+            interviews : interview
         });
         
     } catch (error) {

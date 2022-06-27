@@ -37,20 +37,20 @@ async function openAddInterviewForm(studedentID,studentName){
     formContainer.innerHTML = interviewHTML;
     document.getElementById("interview-form-container").style.display = "block";
 
-    let url = `http://localhost:8000/api/interview/${studedentID}/companies`;
+    let url = `${window.location.origin}/api/interview/${studedentID}/companies`;
     let companyData = [];
 
     await $.ajax({
         type: 'get',
         url: url,
         success: function (data) {
-            console.log(data);
+            // console.log(data);
             companyData = data.company;
         }, error: function (error) {
             console.log(error.responseText);
         }
     });
-    console.log(companyData)
+    // console.log(companyData)
 
     interviewHTML =await `
                         <input type="text" name="student" value=${studedentID} hidden>

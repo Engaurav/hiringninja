@@ -65,3 +65,7 @@
       font-size: x-large;
       text-align: end;
       padding: 10px; }
+
+.dt-buttons {
+  float: right !important;
+  margin-left: 30px; }

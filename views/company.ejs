@@ -20,14 +20,32 @@
           <div id="company-location"><b>Location</b>: <%= company.location %></div>
           <div id="company-pay"><b>Pay</b>: <%= company.pay%></div>
           <div id="company-deadline"><b>Last Date</b>: <%= company.deadline.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }) %></div>
+          <% if(locals.user){%>
+          <div style="text-align: end;">
+            <a href="/files/export/<%= company.name %>.csv" class="btn btn-outline-dark">CSV</a>
+          </div>
+          <% } %>
         </div>
       </div>
       <!-- end: company detail container -->
       
 
-      <div style="margin:20px;">
-        <a href="/files/export/<%= company.name %>.csv" class="btn btn-outline-danger float-end">CSV</a>
+      <div id="information">
         <h2>Students</h2>
+        <div id="status-info">
+          <div>
+            <button class="status-cleared-info"><i class="fa-solid fa-circle"></i></button> 
+            Cleared 
+          </div>
+          <div>
+            <button class="status-not-cleared-info"><i class="fa-solid fa-circle"></i></button> 
+            Not Cleared 
+          </div>
+          <div>
+            <button class="status-not-attempt-info"><i class="fa-solid fa-circle"></i></button> 
+            Not Attempt 
+          </div>
+        </div>
       </div>
 
       <!-- Students Lists Container --> 
@@ -35,26 +53,51 @@
 
         <!-- student detail box -->
 
-        <% for (student of company.students){%>
+        <% for (interview of interviews){%>
        
         <div class="student-data-box">
-          <div class="form-check form-switch" style="right: 10px;position: absolute;top: 13px;width: 130px;">
-            <b style="position: absolute;top: -1px;color: coral;">Status</b>
-            <input class="form-check-input float-end" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-          </div>
+          
           <h3 style="color: #137dc5;">
-            <%= student.name %>
+            <% if(interview.result=='not-attempt'){ %>
+              <button class="status-not-attempt"><i class="fa-solid fa-circle"></i></button>
+            <% }else if(interview.result=='cleared'){ %>
+              <button class="status-cleared"><i class="fa-solid fa-circle"></i></button>
+            <% } else { %> 
+              <button class="status-not-cleared"><i class="fa-solid fa-circle"></i></button>
+            <% } %>
+
+            <%= interview.student.name %>
           </h3>
           <div id="student-personal-detail">
-            <b>Gender:</b> <%= student.gender %>
-            <b>Email :</b> <%= student.email %>
+            <b>Gender:</b> <%= interview.student.gender %>
+            <b>Email :</b> <%= interview.student.email %>
           </div>
-          <div class="student-scores-container">
-           <span> <b>WebD:</b> <%= student.scores.webd %> </span>
-           <span> <b>DSA:</b> <%= student.scores.dsa %> </span>
-           <span> <b>React:</b><%= student.scores.react %></span>
+          <div class="interview.student-scores-container">
+           <span> <b>WebD:</b> <%= interview.student.scores.webd %> </span>
+           <span> <b>DSA:</b> <%= interview.student.scores.dsa %> </span>
+           <span> <b>React:</b><%= interview.student.scores.react %></span>
           </div>
-     
+          <!-- form to send result of interview -->
+
+          <!-- finding student interview obj -->
+
+
+
+          <% if(locals.user && interview.result == 'not-attempt'){%>
+          <div class="student-inteviw-result-form">
+            <h5>Result</h5>
+            <form action="/interview/add/result" method="post">
+              <input type="text" name="id" value="<%= interview._id %>" hidden>
+              <input type="text" name="s_id" value="<%= interview.student._id %>" hidden>
+              <input class="form-check-input" type="radio" name="result" value="cleared"> Cleared
+              <input class="form-check-input" type="radio" name="result" value="not-cleared"> Not Cleared
+              <input type="submit" value="Assign" class="btn btn-primary float-end" style="font-size: x-small;">
+            </form>
+          </div>
+          <% } %>
+
+
+
         </div>
         <% } %>
        

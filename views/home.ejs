@@ -1,8 +1,10 @@
 
-  <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" href="/css/home.css">
+
   
 <body>
   <%- include('_headerImage')%>
@@ -155,15 +157,26 @@
                       <button style="background:none;border: none;font-size: x-large;color: cornflowerblue;" onclick="openAddInterviewForm('<%= student._id %>','<%= student.name %>')">
                         <i class="fa-solid fa-calendar-plus"></i>
                       </button> 
-                      <button style="background: none;border:none;color:red;font-size: x-large;">
-                        <i class="fa-solid fa-delete-left"></i>
-                      </button>
+                      <!-- <button style="background: none;border:none;color:red;font-size: x-large;">
+                        <i class="fa-solid fa-file-pen"></i>
+                      </button> -->
                     </td>
                     <% student_index++ %>
                   </tr>
                 <% } %>
                
             </tbody>
+            <tfoot>
+              <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>Email</th>
+                  <th>Batch</th>
+                  <th>Status</th>
+                  <th>Interview</th>
+              </tr>
+            </tfoot>
           </table>
         </div>
         
@@ -221,8 +234,19 @@
   crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" ></script>
+    <!-- <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js" ></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js" ></script> -->
     <script>$(document).ready( function () {
-        $('#table_id').DataTable();
+        $('#table_id').DataTable( {
+        dom: 'Blfrtip',
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, 'All'],
+        ],
+        buttons: [
+            'csv'
+        ]
+    });
     } );</script>
     <script src="/javascripts/home.js"></script>
   

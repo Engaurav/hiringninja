@@ -15,7 +15,7 @@ const interviewSchema = new mongoose.Schema({
     },
     result : {
         type : String,
-        default : "Not Attempt Yet",
+        default : "not-attempt",
         required: true
     }
 },{

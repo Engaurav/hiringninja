@@ -10,6 +10,7 @@ const interviewController = require('../controllers/interviewController');
 
 // roter for adding new  company
 router.post("/add",interviewController.addInterview);
+router.post("/add/result",interviewController.addInterviewResults);
 
 
 module.exports = router;
