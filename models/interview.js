@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// setting up interview
 const interviewSchema = new mongoose.Schema({
     student : {
         type: mongoose.Schema.Types.ObjectId,

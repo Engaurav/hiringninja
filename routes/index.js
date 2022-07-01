@@ -40,7 +40,7 @@ router.use("/api", require("./api/index"));
 
 
 
-
+// rotes if page not found
 router.all("*",(req,res)=>{
     return res.send(homeController.page404)
 })

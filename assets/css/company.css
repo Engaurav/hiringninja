@@ -76,6 +76,9 @@
         float: right;
         font-size: small;
         color: red; }
+      #main-container #students-lists-container .student-data-box .student-personal-detail {
+        display: flex;
+        justify-content: space-between; }
       #main-container #students-lists-container .student-data-box .student-scores-container {
         display: flex;
         justify-content: space-between; }

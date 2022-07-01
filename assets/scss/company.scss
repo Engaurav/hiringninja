@@ -70,7 +70,7 @@
             background: white;
             padding: 10px;
             margin: 10px;
-            min-width: 380px;
+            width: 370px;
             position: relative;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
             h3{
@@ -95,6 +95,10 @@
                     font-size: small;
                     color: red;
                 }
+            }
+            .student-personal-detail{
+                display: flex;
+                justify-content: space-between;
             }
             .student-scores-container{
                 display: flex;

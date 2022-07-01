@@ -1,21 +1,27 @@
 <header>
+    <!-- calling font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link type="text/css" rel="stylesheet" href="/css/header.css">
     <nav>
+        <!-- div for Brang Logo -->
         <div id="brand-logo">
             <img src="/images/logo.png" alt="Brand Logo" width="120px"/>
         </div>
         <div id="navbar">
+
+            <!-- Div container for Links -->
            <div id="nav-links">
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/jobs/lists">Placement Cell</a></li>
+                    <!-- checking if user is logged in -->
                     <% if ( !locals.user ) {%>
                     <li><a href="/user/register">Register</a></li>
                     <li><a href="/user/login">Login</a></li>
                     <% } %>
                 </ul>
            </div>
+            <!-- checking if user is logged in -->
            <% if( locals.user ) {%>
            <div id="nav-profile">
                 <div id="nav-profile-image"><img src="/images/profile.png" alt="profile-pic" width="60px" onclick="showProfileDropdown()"></div>
@@ -26,6 +32,7 @@
                 </div>
            </div>
            <% } %>
+           <!-- sidebar button only show when media width is less than 600px -->
            <div id="sidebar-button">
              <button onclick="showSideBar()"><i class="fa-solid fa-bars"></i></button>
            </div>

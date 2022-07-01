@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// creatung scores schema
 const scoresSchema = new mongoose.Schema({
     dsa : {
         type: Number,

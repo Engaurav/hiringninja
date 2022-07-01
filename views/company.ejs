@@ -68,11 +68,15 @@
 
             <%= interview.student.name %>
           </h3>
-          <div id="student-personal-detail">
-            <b>Gender:</b> <%= interview.student.gender %>
-            <b>Email :</b> <%= interview.student.email %>
+          <div class="student-personal-detail">
+            <span>
+              <b>Gender:</b> <%= interview.student.gender %>
+            </span>
+            <span>
+              <b>Email :</b> <%= interview.student.email %>
+            </span>
           </div>
-          <div class="interview.student-scores-container">
+          <div class="student-scores-container">
            <span> <b>WebD:</b> <%= interview.student.scores.webd %> </span>
            <span> <b>DSA:</b> <%= interview.student.scores.dsa %> </span>
            <span> <b>React:</b><%= interview.student.scores.react %></span>

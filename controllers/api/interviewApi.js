@@ -2,6 +2,9 @@
 const Student = require('../../models/student');
 const Company = require('../../models/company');
 
+
+
+// controller for Company List Send Api
 module.exports.CompanyListSendApi = async (req,res) => {
     let id = req.params.id;
     // console.log("id",id)

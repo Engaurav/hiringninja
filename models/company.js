@@ -3,9 +3,10 @@ const mongoose = require("mongoose");
 // multer for uploading files
 const multer  = require('multer');
 const path = require('path');
+// path for saving uploads
 const LOGO_PATH = path.join('/uploads/company/logo');
 
-
+// company schema
 const companySchema = new mongoose.Schema({
     name : {
         type: String,
@@ -42,7 +43,7 @@ const companySchema = new mongoose.Schema({
     timestamps: true
 })
 
-
+// setting up multer
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname,'../', LOGO_PATH))
